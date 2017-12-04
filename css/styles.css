@@ -8,20 +8,35 @@
 
 4) At the appropriate breakpoint, create layout with grid and grid-areas
 
+
+Notes: 
+
+- Use Firefox to develop grid since it has a grid inspector
+
+- Rachel Andrew's Grid by Example http://gridbyexample.com
+
+- MDN has exhaustive documentation https://www.mozilla.org/en-US/developer/css-grid/
+
+- CSS Tricks has a complete guide https://css-tricks.com/snippets/css/complete-guide-grid/
+
+
+
 */
 
 .site {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto 1fr 3fr;
+	grid-template-rows: auto 1fr 3fr 1fr;
 	grid-template-areas:
 		'title title'
 		'main header'
-		'main sidebar';
+		'main sidebar'
+		'footer footer';
 }
 
 .masthead {
 	grid-area: header;
+	background: yellow;
 }
 
 .page-title {
@@ -30,14 +45,17 @@
 
 .main-content {
 	grid-area: main;
+	background: blue;
 }
 
 .sidebar {
 	grid-area: sidebar;
+	background: red;
 }
 
 .footer {
 	grid-area: footer;
+	background: green;
 }
 
 @media screen and (min-width: 34em) {
@@ -46,6 +64,6 @@
 		grid-template-areas:
 			'title title title'
 			'main header header'
-			'main header header';
+			'main sidebar footer';
 	}
 }
